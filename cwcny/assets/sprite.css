@@ -1,0 +1,7 @@
+.sprite { background: url('sprite.png') no-repeat top left; width: 1080px; height: 720px;  } 
+.sprite.greeting-tc-horse { background-position: 0 0; } 
+.sprite.greeting-tc-goat { background-position: 0 -720px; } 
+.sprite.greeting-tc-2015 { background-position: 0 -1440px; } 
+.sprite.shake-tc { background-position: 0 -2160px; width: 528px; height: 270px; } 
+.sprite.continue-tc { background-position: 0 -2430px; width: 528px; height: 270px; } 
+.sprite.asktoshare-tc { background-position: 0 -2700px; width: 870px; height: 150px; } 

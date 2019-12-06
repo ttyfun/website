@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+  <title>...年快樂！</title>
+  <meta name="title" content="新年快樂" />
+  <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="Description" content="A website to remember." />
+  <meta name="viewport" content="initial-scale=1,user-scalable=no" />
+  <link rel="image_src" href="../assets/poster.png" />
+  <link rel="shortcut icon" href="../assets/favicon.ico">
+  <link rel="icon" type="image/png" href="../assets/favicon64.png" sizes="64x64" />
+  <link href="../src/style.css" media="screen" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../lib/paper.js"></script>
+  <script type="text/javascript" src="../lib/traer.js"></script>  
+  <script type="text/paperscript" src="../src/main.js" canvas="canvas"></script>
+</head>
+<body>
+  <div style="display:none">
+    <img src="../assets/thumb.png" alt="" width="140" height="140">
+  </div>
+  <div class="border top"></div>
+  <div class="border left"></div>
+  <div class="border right"></div>
+  <div class="border bottom"></div>
+
+  <header>
+    <!-- <a href="../eng" class="lang">ENG</a> -->
+    <a id="share">分享</a>
+    <div id="sharepage">
+      
+      <div id="close">
+        close
+        <span class="bar"></span>
+         <span class="bar"></span>
+      </div>
+      <div class="sharecontainer">
+
+        <div class="sharetext">
+          分享/Share
+          <img src="../assets/chi-share.png" alt="" width="220" height="110">
+        </div>
+
+        <div id="qrcode">
+          <img src="../assets/qr-chi.png" alt="" width="140" height="140">
+        </div>
+      </div>
+      
+    </div>  
+  </header>
+  
+  <main>
+    <div id="cover" class="slow-gradient"></div>
+    <div id="text">
+      <div id="shake" class="hidden">
+        摇一摇
+      </div>
+      <div id="wish">
+        新年快乐
+      </div>
+    </div>
+
+    <canvas id="canvas" resize></canvas>
+  </main>
+  
+  <footer id="copyright">
+      CNY 2015 © <a href="http://www.creativeworks.com.hk" target="_blank">Creativeworks</a>
+  </footer>
+  <audio src="../assets/dubstep.mp3" loop id="audio" ></audio>
+
+  <script>
+  window.onload = turnMobile;
+  window.onorientationchange = turnMobile;
+
+ function turnMobile() {  
+      if ( window.orientation && window.orientation !== 0) {
+        document.getElementById('cover').style.backgroundImage="url(../assets/landscape.jpg)";
+        document.getElementById('cover').style.opacity= "1";
+        document.getElementById('cover').style.zIndex= "100";
+        document.getElementById('text').style.opacity = 0;
+      } else {
+        document.getElementById('cover').style.backgroundImage="";
+        document.getElementById('cover').style.opacity= "0.5";
+        document.getElementById('cover').style.zIndex= "0";
+        document.getElementById('text').style.opacity = 1;
+      }
+  }
+
+  document.getElementById('close').addEventListener('click', function(){
+    document.getElementById('sharepage').className = "";
+  })
+  document.getElementById('share').addEventListener('click', function(e){
+    e.preventDefault();
+    document.getElementById('sharepage').className = "open";
+  })
+  </script>
+
+  
+<script type="text/javascript">
+  var a2a_config = a2a_config || {};
+  a2a_config.linkurl = "play.creativeworks.com.hk/cny2015/chi";
+  // a2a_config.locale = "zh-CN";
+</script>
+</body>
+</html>
